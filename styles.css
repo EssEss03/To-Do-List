@@ -1,0 +1,219 @@
+/* General Styling */
+/* Styles the overall appearance of the page */
+body {
+    font-family: 'Poppins', sans-serif; /* Sets a clean, modern font */
+    text-align: center; /* Centers all text */
+    background: linear-gradient(135deg, #C04000, #7F5539); /* Sets a gradient background with Mahogany Red & Syrup Brown */
+    padding: 20px; /* Adds space around the content */
+    min-height: 100vh; /* Ensures the page covers at least the full screen height */
+    color: white; /* Sets the default text color to white */
+}
+
+/* Main Title */
+/* Styles the To-Do List heading */
+h1 {
+    color: white; /* White text for contrast */
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 20px; /* Adds space below the title */
+}
+
+/* Form Container */
+/* Styles the form that adds new tasks */
+form {
+    background: white; /* White background for contrast */
+    padding: 20px; /* Adds padding inside the form */
+    border-radius: 12px; /* Rounds the corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the form elements */
+    gap: 10px; /* Adds space between form elements */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    max-width: 600px; /* Limits the form width */
+    margin: 0 auto 20px auto; /* Centers the form */
+}
+
+/* Input Fields */
+/* Styles text input, select dropdown, and buttons */
+input, select, button {
+    padding: 12px; /* Adds padding for a better appearance */
+    font-size: 1em; /* Ensures readable text */
+    border-radius: 5px; /* Rounds the edges */
+    border: 1px solid #7F5539; /* Adds a border in syrup brown */
+}
+
+/* Expands the text input to take up available space */
+input {
+    flex: 1;
+}
+
+/* Styles the dropdown menu */
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Button Styling */
+/* Styles the Add Task button */
+button {
+    background: #C04000; /* Mahogany Red */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: #7F5539; /* Changes background to Syrup Brown */
+    transform: scale(1.1); /* Slightly enlarges the button */
+}
+
+/* To-Do List Section */
+/* Styles the section headers for task lists */
+h2 {
+    color: white;
+    font-size: 1.8em;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* Task Lists */
+/* Styles unordered lists for tasks */
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    max-width: 600px; /* Centers and limits width */
+    margin: 0 auto;
+}
+
+/* Keyframe Animations */
+/* Animation for fading in new tasks */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for sliding out deleted tasks */
+@keyframes slideOut {
+    to {
+        opacity: 2;
+        transform: translateX(100px);
+    }
+}
+
+/* Animation for bouncing completed tasks */
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Animation for shaking overdue tasks */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+}
+
+/* Task Item */
+/* Styles each task */
+li {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+    color: #7F5539;
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in effect when added */
+}
+
+/* Slight zoom effect when hovering over tasks */
+li:hover {
+    transform: scale(1.03);
+}
+
+/* Task Completion - Bounce Effect */
+/* Styles completed tasks with a strikethrough and animation */
+.completed {
+    text-decoration: line-through; /* Crosses out completed tasks */
+    color: gray; /* Changes color to gray */
+    opacity: 0.7;
+    animation: bounce 0.3s ease-in-out;
+}
+
+/* Task Deletion - Slide Out */
+/* Applies slide-out effect to deleted tasks */
+.removing {
+    animation: slideOut 0.3s ease-in-out forwards;
+}
+
+/* Due Date Styling */
+.due-date {
+    font-size: 0.9em;
+    color: #C04000;
+    font-weight: bold;
+}
+
+/* Overdue Task - Shake Effect */
+.overdue {
+    color: red;
+    font-weight: bold;
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Completed Task Section */
+/* Slightly fades completed tasks */
+#completed-list {
+    opacity: 0.9;
+}
+
+/* Category Styling */
+.category {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Category Colors */
+.work {
+    color: #C04000;
+}
+
+.personal {
+    color: #7F5539;
+}
+
+.urgent {
+    color: red;
+}
+
+.other {
+    color: gray;
+}
+
+/* Task Buttons */
+li button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+/* Makes buttons slightly larger when hovered */
+li button:hover {
+    transform: scale(1.1);
+    color: #C04000;
+}

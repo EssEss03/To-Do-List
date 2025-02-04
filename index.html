@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for character encoding and responsive design -->
+    <meta charset="UTF-8"> <!-- Ensures proper text encoding for special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on all devices -->
+    
+    <!-- Page Title -->
+    <title>To-Do List</title>
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Heading -->
+    <h1>To-Do List</h1>
+    <!-- Form for adding new tasks -->
+    <form id="todo-form">
+        <!-- Text input for entering a new task -->
+        <input type="text" id="task-input" placeholder="Enter a new task..." required>
+
+        <!-- Date picker for selecting the due date of the task -->
+        <input type="date" id="task-date" min="">
+
+        <!-- Dropdown menu to select the category of the task -->
+        <select id="task-category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Urgent">Urgent</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <!-- Button to submit the form and add the task -->
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Unordered list to display active (incomplete) tasks -->
+    <ul id="todo-list"></ul>
+
+    <!-- Section heading for completed tasks -->
+    <h2>Completed Tasks</h2>
+
+    <!-- Unordered list to display completed tasks -->
+    <ul id="completed-list"></ul>
+
+    <!-- JavaScript file that handles task logic and interactions -->
+    <script src="index.js"></script>
+</body>
+</html>

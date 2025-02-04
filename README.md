@@ -18,7 +18,7 @@ A simple, elegant, and fully functional To-Do List application built with **HTML
 3.Open index.html in a web browser (Chrome, Firefox, Edge, etc.)
    You can double-click the index.html file or drag and drop it into your browser.
    
-Option 2: Run with a Local Server
+### 🔹 Option 2: Run with a Local Server
 For better development and testing, use live-server (Node.js required).
  1. Install live-server (if not installed):
    bash
